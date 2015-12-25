@@ -1,0 +1,7 @@
+New Habit Page
+.ht-new-habit-form
+  = form_for(@habit, url: { action: :create } ) do |f|
+    = f.label :title
+    = f.text_field :title
+    = f.submit
+

@@ -1,7 +1,6 @@
 Hello World!
 - if user_signed_in?
-  .ht-logout
-    = link_to('Log out', destroy_user_session_url, method: :delete)
-- else
-  .ht-login
-    = link_to('Log in', new_user_session_url)
+  .ht-habit-links
+    %ul
+      %li= link_to('Add a new Habit', new_habit_url)
+      %li= link_to('See all my Habits', habits_url)
