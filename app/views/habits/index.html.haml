@@ -1,4 +1,4 @@
-Habits Index
+%h3 Habits Index
 - @habits.each do |habit|
-  .ht-habit
-    = habit.title
+  %ul.ht-habit
+    %li= link_to habit.title, habit_url(habit)

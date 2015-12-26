@@ -1,1 +1,5 @@
-Habit show
+%h3= @habit.title
+= link_to 'My Habits', habits_url
+%h3 Occurrences
+- @habit.occurrences.each do |o|
+  .ht-occurrence
