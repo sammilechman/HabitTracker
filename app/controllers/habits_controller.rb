@@ -19,7 +19,11 @@ class HabitsController < ApplicationController
   end
 
   def index
-    @habits = current_user.habits
+    if user_signed_in?
+      @habits = current_user.habits
+    else
+      redirect_to welcome_url
+    end
   end
 
   private
