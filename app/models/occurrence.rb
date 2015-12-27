@@ -5,7 +5,7 @@ class Occurrence < ActiveRecord::Base
 
   include TimeModule
 
-  def formatted_created_at
-    formatted_datetime(self.created_at)
+  def readable_created_at
+    readable_datetime(self.created_at)
   end
 end
