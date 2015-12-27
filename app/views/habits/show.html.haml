@@ -1,5 +1,8 @@
 %h3= @habit.title
 = link_to 'My Habits', habits_url
 %h3 Occurrences
-- @habit.occurrences.each do |o|
-  .ht-occurrence
+= button_to 'Create a new Occurrence', occurrences_url, params: { habit_id: @habit.id }
+.ht-habit-occurrences
+  - @habit.occurrences.each do |o|
+    .ht-individual-occurrence
+      = o.formatted_created_at
