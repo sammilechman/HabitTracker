@@ -1,4 +1,6 @@
-%h3 Habits Index
-- @habits.each do |habit|
-  %ul.ht-habit
-    %li= link_to habit.title, habit_url(habit)
+%h3 My Habits
+.ht-habits-index
+  - @habits.each do |habit|
+    .ht-habit
+      = link_to habit.title, habit_url(habit)
+      = button_to 'Create', occurrences_url, params: { habit_id: habit.id }
