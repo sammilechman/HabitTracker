@@ -5,6 +5,7 @@ class HabitsController < ApplicationController
 
   def create
     @habit = current_user.habits.new(habit_params)
+    authorize!(:create, @habit)
     if @habit.save
       flash[:notice] = 'Success'
       redirect_to habit_url(@habit)
@@ -16,6 +17,7 @@ class HabitsController < ApplicationController
 
   def show
     @habit = Habit.find(params[:id])
+    authorize!(:show, @habit)
   end
 
   def index
