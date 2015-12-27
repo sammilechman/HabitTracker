@@ -4,7 +4,7 @@ class OccurrencesController < ApplicationController
     if habit.create_occurrence!
       flash[:notice] = 'Success'
     else
-      flash[:error] = 'Error'
+      flash[:alert] = 'Error'
     end
     redirect_to habit_url(habit)
   end

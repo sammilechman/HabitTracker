@@ -9,7 +9,7 @@ class HabitsController < ApplicationController
       flash[:notice] = 'Success'
       redirect_to habit_url(@habit)
     else
-      flash[:error] = 'Error saving Habit'
+      flash[:alert] = 'Error saving Habit'
       redirect_to new_habit_url
     end
   end
