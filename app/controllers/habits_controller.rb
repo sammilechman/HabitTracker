@@ -7,10 +7,10 @@ class HabitsController < ApplicationController
     @habit = current_user.habits.new(habit_params)
     authorize!(:create, @habit)
     if @habit.save
-      flash[:notice] = 'Success'
+      flash_notice('Success')
       redirect_to habit_url(@habit)
     else
-      flash[:alert] = 'Error saving Habit'
+      flash_alert('Error')
       redirect_to new_habit_url
     end
   end

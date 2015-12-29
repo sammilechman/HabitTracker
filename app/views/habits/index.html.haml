@@ -2,5 +2,6 @@
 .ht-habits-index
   - @habits.each do |habit|
     .ht-habit
-      = link_to habit.title, habit_url(habit)
       = button_to 'Create', occurrences_url, params: { habit_id: habit.id }
+      = link_to habit.title, habit_url(habit)
+      = button_to 'Delete', occurrence_url(habit), method: :delete
