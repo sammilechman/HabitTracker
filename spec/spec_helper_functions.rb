@@ -1,10 +1,10 @@
 module Helpers
   def assert_true(statement)
-    assert_equal(statement, true)
+    assert_equal(true, statement)
   end
 
   def assert_false(statement)
-    assert_equal(statement, false)
+    assert_equal(false, statement)
   end
 
   def assert_valid(object)

@@ -11,7 +11,7 @@ class Habit < ActiveRecord::Base
     self.occurrences.create.persisted?
   end
 
-  # Returns true if occurrence deleted successfully, false otherwise
+  # Returns true if occurrence deleted successfully, false or nil otherwise
   def delete_most_recent_occurrence!
     self.occurrences.first.try(:destroy).try(:destroyed?)
   end
