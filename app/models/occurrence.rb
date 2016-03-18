@@ -1,6 +1,9 @@
 class Occurrence < ActiveRecord::Base
   belongs_to :habit
+  validates :habit, presence: :true
+
   has_one :user, through: :habit
+  validates :user, presence: :true
 
   # .first == most recently added occurrence
   default_scope { order('created_at DESC') }
